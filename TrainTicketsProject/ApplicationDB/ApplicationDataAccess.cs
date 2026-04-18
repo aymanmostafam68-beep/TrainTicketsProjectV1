@@ -43,16 +43,16 @@ namespace TrainTicketsProject.ApplicationDB
                 .HasForeignKey(ts => ts.TrainId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<TripSchedule>()
-                .HasOne(ts => ts.FromStation)
-                .WithMany()
-                .HasForeignKey(ts => ts.FromStationId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<TripDirection>()
+     .HasOne(td => td.FromStation)
+     .WithMany()
+     .HasForeignKey(td => td.FromStationId)
+     .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<TripSchedule>()
-                .HasOne(ts => ts.ToStation)
+            modelBuilder.Entity<TripDirection>()
+                .HasOne(td => td.ToStation)
                 .WithMany()
-                .HasForeignKey(ts => ts.ToStationId)
+                .HasForeignKey(td => td.ToStationId)
                 .OnDelete(DeleteBehavior.Restrict);
 
 

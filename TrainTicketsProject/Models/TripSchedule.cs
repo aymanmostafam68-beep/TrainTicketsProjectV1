@@ -16,14 +16,6 @@
         public DateTime DepartureTime { get; set; }
         public DateTime ArrivalTime { get; set; }
 
-        public int FromStationId { get; set; }
-        [ForeignKey(nameof(FromStationId))]
-
-        public Station FromStation { get; set; } = default!;
-
-        public int ToStationId { get; set; }
-        [ForeignKey(nameof(ToStationId))]
-        public Station ToStation { get; set; } = default!;
         public bool IsActive { get; set; }
 
 
